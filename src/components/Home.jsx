@@ -20,8 +20,7 @@ const Home = () => {
         method: "GET",
         url: "https://moviesdatabase.p.rapidapi.com/titles/x/upcoming",
         headers: {
-          "X-RapidAPI-Key":
-            "84de910d50mshe4756b30e6b038bp1ae807jsn41d4f38e0837",
+          "X-RapidAPI-Key": "",
           "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
         },
       };
