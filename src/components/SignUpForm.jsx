@@ -39,21 +39,19 @@ export default function SignUpForm({ setToken }) {
       <h2>Login/Sign Up</h2>
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
-        <label>
-          Username:{""}
-          <input
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
-        <label>
-          Password:{""}
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
+        <label>Username:{""}</label>
+        <input
+          className="authpage"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <label>Password:{""}</label>
+        <input
+          className="authpage"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <button>Submit</button>
       </form>
     </>

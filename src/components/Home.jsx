@@ -12,6 +12,22 @@ import axios from "axios";
 // };
 // export default Home;
 
+// const options = {
+//   method: 'GET',
+//   url: 'https://imdb-top-100-movies.p.rapidapi.com/',
+//   headers: {
+//     'X-RapidAPI-Key': '84de910d50mshe4756b30e6b038bp1ae807jsn41d4f38e0837',
+//     'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
+//   }
+// };
+
+// try {
+// 	const response = await axios.request(options);
+// 	console.log(response.data);
+// } catch (error) {
+// 	console.error(error);
+// }
+
 const Home = () => {
   const [movieData, setmovieData] = useState([]);
   useEffect(() => {
@@ -20,7 +36,8 @@ const Home = () => {
         method: "GET",
         url: "https://moviesdatabase.p.rapidapi.com/titles/x/upcoming",
         headers: {
-          "X-RapidAPI-Key": "",
+          "X-RapidAPI-Key":
+            "84de910d50mshe4756b30e6b038bp1ae807jsn41d4f38e0837",
           "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
         },
       };
