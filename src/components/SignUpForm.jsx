@@ -9,7 +9,41 @@ export default function SignUpForm({ setToken }) {
 
   async function handleSubmit(event) {
     event.preventDefault();
-
+    if (username.length <= 0 || password.length <= 0) {
+      alert(
+        "Please enter valid credentials, or create an account to gain access."
+      );
+    } else {
+      try {
+        const response = await fetch(
+          "https://fsa-jwt-practice.herokuapp.com/signup",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              username,
+              password,
+            }),
+          }
+        );
+        const result = await response.json();
+        setToken(result.token);
+        console.log(result);
+        setUsername("");
+        setPassword("");
+        navigate("/home");
+      } catch (error) {
+        setError(error.message);
+      }
+    }
+  }
+  async function handleSubmitTwo(event) {
+    event.preventDefault();
+    // if (username.length <= 0 || password.length <= 0){
+    //   alert ("Please enter valid credentials.")
+    // }
     try {
       const response = await fetch(
         "https://fsa-jwt-practice.herokuapp.com/signup",
@@ -29,14 +63,14 @@ export default function SignUpForm({ setToken }) {
       console.log(result);
       setUsername("");
       setPassword("");
-      navigate("/home");
+      navigate("/accountcreation");
     } catch (error) {
       setError(error.message);
     }
   }
   return (
-    <>
-      <h2>Login/Sign Up</h2>
+    <div className="">
+      <h2>MoView</h2>
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
         <label>Username:{""}</label>
@@ -52,8 +86,11 @@ export default function SignUpForm({ setToken }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button>Submit</button>
+        <button className="login button">Log In</button>
       </form>
-    </>
+      <form onSubmit={handleSubmitTwo}>
+        <button className="signup button">Sign Up</button>
+      </form>
+    </div>
   );
 }

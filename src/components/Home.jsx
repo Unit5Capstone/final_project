@@ -2,32 +2,6 @@ import { React, useEffect, useState } from "react";
 import Authenticate from "./Authenticate";
 import SignUpForm from "./SignUpForm";
 import axios from "axios";
-
-// const Home = () => {
-//   return (
-//     <div className="home">
-//       <h1>Welcome Back</h1>
-//     </div>
-//   );
-// };
-// export default Home;
-
-// const options = {
-//   method: 'GET',
-//   url: 'https://imdb-top-100-movies.p.rapidapi.com/',
-//   headers: {
-//     'X-RapidAPI-Key': '84de910d50mshe4756b30e6b038bp1ae807jsn41d4f38e0837',
-//     'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
-//   }
-// };
-
-// try {
-// 	const response = await axios.request(options);
-// 	console.log(response.data);
-// } catch (error) {
-// 	console.error(error);
-// }
-
 const Home = () => {
   const [movieData, setmovieData] = useState([]);
   useEffect(() => {
@@ -57,7 +31,7 @@ const Home = () => {
     console.log(movie, movie.primaryImage);
     return (
       <ul>
-        <li>{movie.originalTitleText.text}</li>
+        <p>{movie.originalTitleText.text}</p>
         <img
           src={movie.primaryImage && movie.primaryImage.url}
           width="500px"
