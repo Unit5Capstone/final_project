@@ -2,6 +2,7 @@ import { React, useEffect, useState } from "react";
 import Authenticate from "./Authenticate";
 import SignUpForm from "./SignUpForm";
 import axios from "axios";
+
 const Home = () => {
   const [movieData, setmovieData] = useState([]);
   useEffect(() => {
@@ -9,6 +10,7 @@ const Home = () => {
       const options = {
         method: "GET",
         url: "https://moviesdatabase.p.rapidapi.com/titles/x/upcoming",
+
         headers: {
           "X-RapidAPI-Key":
             "84de910d50mshe4756b30e6b038bp1ae807jsn41d4f38e0837",
@@ -30,14 +32,14 @@ const Home = () => {
   const movieList = movieData.map((movie) => {
     console.log(movie, movie.primaryImage);
     return (
-      <ul>
+      <div>
         <p>{movie.originalTitleText.text}</p>
         <img
           src={movie.primaryImage && movie.primaryImage.url}
           width="500px"
           height="500px"
         />
-      </ul>
+      </div>
     );
   });
 

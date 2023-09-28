@@ -41,9 +41,7 @@ export default function SignUpForm({ setToken }) {
   }
   async function handleSubmitTwo(event) {
     event.preventDefault();
-    // if (username.length <= 0 || password.length <= 0){
-    //   alert ("Please enter valid credentials.")
-    // }
+
     try {
       const response = await fetch(
         "https://fsa-jwt-practice.herokuapp.com/signup",
@@ -73,13 +71,13 @@ export default function SignUpForm({ setToken }) {
       <h2>MoView</h2>
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
-        <label>Username:{""}</label>
+        <label>Username{""}</label>
         <input
           className="authpage"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label>Password:{""}</label>
+        <label>Password{""}</label>
         <input
           className="authpage"
           type="password"

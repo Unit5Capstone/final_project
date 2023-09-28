@@ -2,6 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-family: "Source Code Pro", monospace;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -31,21 +32,29 @@ a:hover {
   padding: 15px;
 }
 body {
-  background-color: black;
+  /* background-color: black; */
+  /* background-image: url(https://wallpapercave.com/wp/wp5556224.jpg); */
   background-image: url(https://wallpapercave.com/wp/wp5556224.jpg);
+  /* background-image: url(https://wallpapercave.com/wp/wp8964049.jpg); */
+  /* https://wallpaperaccess.com/full/2841127.jpg
+} */
 }
-.accountpage {
+accountpage {
   background-color: black;
 }
 
 body {
   margin: 0;
+  /* background-image: url(https://wallpapercave.com/wp/wp8964049.jpg); */
   display: flex;
   place-items: center;
   min-width: 500px;
   min-height: 100vh;
 }
-
+input {
+  width: 200px;
+  align-items: center;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -61,12 +70,14 @@ h2 {
 form {
   text-align: center;
   display: flex;
+  place-items: center;
   flex-direction: column;
 }
 
 label > input {
   z-index: 1;
   position: relative;
+  text-align: center;
 }
 button {
   border-radius: 8px;
@@ -78,6 +89,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  width: 208px;
 }
 button:hover {
   border-color: #646cff;
@@ -86,19 +98,20 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-.authpage {
+authpage {
   background-color: gray;
+  color: white;
 }
-.titles {
+home {
+  /* background-color: black; */
+  padding: 100px;
   text-align: center;
+  /* background-image: url(https://wallpapercave.com/wp/wp5556224.jpg); */
 }
-.feed {
-  flex-wrap: wrap-reverse;
-  display: flex;
-}
-.submitbutton {
+/* submitbutton {
   text-align: center;
-}
+  width: 200px;
+} */
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -111,4 +124,84 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* header {
+  color: darkslateblue;
+  background-color: white;
+  text-align: left;
+  height: 75px;
+  width: 100%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0;
+  position: absolute;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+/* body {
+  background-color: #8d5ebb;
+  width: 50;
+  height: 60;
+  text-align: center;
+  padding: 40px;
+} */
+h1 {
+  margin: 20px;
+}
+h2 {
+  color: white;
+  text-align: center;
+  margin: 15px;
+}
+h3 {
+  font-family: "Courier New", Courier, monospace;
+}
+h4 {
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-size: xx-large;
+  text-align: center;
+}
+.home button {
+  width: 300px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -100px;
+}
+/* img {
+  width: 34%;
+  height: 18%;
+  padding: 20px;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+.textbox {
+  background-color: darkslateblue;
+  border: 50px solid;
+  width: 45%;
+  height: 1050px;
+  padding: 22px;
+  text-align: left;
+  border-color: blueviolet;
+  top: 59%;
+  left: 50%;
+  bottom: 40%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  color: white;
+  font-size: larger;
+  flex-direction: column;
+}
+/* .header2 {
+  float: right;
+} */
+.submitform {
+  text-align: center;
+  width: 200px;
 }
