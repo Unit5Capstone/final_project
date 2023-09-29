@@ -36,8 +36,8 @@ const Home = () => {
         <p>{movie.originalTitleText.text}</p>
         <img
           src={movie.primaryImage && movie.primaryImage.url}
-          width="500px"
-          height="500px"
+          width="450px"
+          height="450px"
         />
       </div>
     );
@@ -51,7 +51,3 @@ const Home = () => {
   );
 };
 export default Home;
-
-// movieData.map((movie) => {
-//   <li>{}</li>;
-// })
