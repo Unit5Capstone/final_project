@@ -24,12 +24,12 @@ a:hover {
   color: #535bf2;
 }
 
-.home {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-  overflow: auto;
-  padding: 15px;
+div.home {
+  justify-self: center;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  grid-gap: 10px;
+  /* overflow: auto; */
+  justify-content: end;
 }
 body {
   /* background-color: black; */
@@ -54,17 +54,21 @@ body {
 input {
   width: 200px;
   align-items: center;
+  padding: 2px;
+  height: 30px;
+  border-radius: 10px;
 }
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 4em;
+  /* line-height: 1.1; */
 }
 
 h2 {
-  font-size: 3.2em;
+  /* font-size: 3.2em; */
   padding: inherit;
   top: 0;
   left: 0;
+  font-size: 3.2em;
 }
 
 form {
@@ -80,8 +84,8 @@ label > input {
   text-align: center;
 }
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border-radius: 10px;
+  /* border: 1px solid transparent; */
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -98,21 +102,21 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-authpage {
-  background-color: gray;
+input.authpage {
   color: white;
+  border-radius: 10px;
+  width: 200px;
+  height: 30px;
+  font-size: medium;
 }
-home {
+div.homefeed {
   /* background-color: black; */
-  padding: 100px;
+  /* padding: 100px; */
   text-align: center;
   /* background-image: url(https://wallpapercave.com/wp/wp5556224.jpg); */
+  overflow-x: auto;
+  flex-wrap: nowrap;
 }
-/* submitbutton {
-  text-align: center;
-  width: 200px;
-} */
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -126,7 +130,7 @@ home {
   }
 }
 
-/* header {
+header {
   color: darkslateblue;
   background-color: white;
   text-align: left;
@@ -139,14 +143,15 @@ home {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-} */
+}
+*/
 /* body {
   background-color: #8d5ebb;
   width: 50;
   height: 60;
   text-align: center;
   padding: 40px;
-} */
+}
 h1 {
   margin: 20px;
 }
@@ -163,14 +168,14 @@ h4 {
   font-size: xx-large;
   text-align: center;
 }
-.home button {
+/* home button {
   width: 300px;
   height: 200px;
   top: 50%;
   left: 50%;
   margin-left: -150px;
   margin-top: -100px;
-}
+} */
 /* img {
   width: 34%;
   height: 18%;
@@ -198,10 +203,59 @@ h4 {
   font-size: larger;
   flex-direction: column;
 }
-/* .header2 {
-  float: right;
-} */
-.submitform {
+
+div.homebutton {
   text-align: center;
-  width: 200px;
+  /* background-color: rgb(243, 243, 243); */
+  border: 5px;
+  padding: 15px 32px;
+  text-align: center;
+  margin: 4px 2px;
+  cursor: pointer;
+  /* -webkit-transition-duration: 0.6s; */
+  transition-duration: 0.6s;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}
+
+.button.browse.button {
+  text-align: center;
+  position: absolute;
+  /* top: 10%; */
+  /* right: 0; */
+  width: 120px;
+  /* transform: translateY(-50%); */
+  /* bottom: 0px; */
+  box-sizing: border-box;
+  /* color: rgb(92, 92, 92); */
+  height: 38px;
+  /* left: 0px; */
+  position: fixed;
+  /* right: 0px; */
+  /* text-align: left; */
+  text-size-adjust: 100%;
+  text-transform: uppercase;
+  top: 5%;
+  /* width: 750px; */
+  column-rule-color: rgb(92, 92, 92);
+  perspective-origin: 375px 19px;
+  transform-origin: 375px 19px;
+  /* border: 0px none rgb(92, 92, 92); */
+  font: normal normal normal normal 12px / 20px -apple-system, "Helvetica Neue",
+    Helvetica, "Segoe UI", Arial, sans-serif;
+  /* margin: 30px 0px 10px; */
+  left: 85%;
+  outline: rgb(92, 92, 92) none 0px;
+  border-radius: 10px;
+}
+input.searchbar {
+  /* font-size: 24px; */
+  width: 350px;
+  height: 25px;
+  border-radius: 10px;
+  /* display: flex; */
+}
+.container {
+  right: 10%;
 }

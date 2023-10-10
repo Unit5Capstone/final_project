@@ -5,6 +5,8 @@ import SignUpForm from "./components/SignUpForm";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import AccountCreation from "./components/AccountCreation";
+import Profile from "./components/Profile";
+import MakePost from "./components/MakePost";
 
 export default function App() {
   const [token, setToken] = useState(null);
@@ -19,6 +21,8 @@ export default function App() {
 
         <Route path="/home" element={<Home />} />
         <Route path="/accountcreation" element={<AccountCreation />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/makepost" element={<MakePost />} />
       </Routes>
     </>
   );

@@ -10,9 +10,7 @@ export default function SignUpForm({ setToken }) {
   async function handleSubmit(event) {
     event.preventDefault();
     if (username.length <= 0 || password.length <= 0) {
-      alert(
-        "Please enter valid credentials, or create an account to gain access."
-      );
+      alert("Please enter valid credentials, or signup to create an account.");
     } else {
       try {
         const response = await fetch(
@@ -67,28 +65,33 @@ export default function SignUpForm({ setToken }) {
     }
   }
   return (
-    <div className="">
-      <h2>MoView</h2>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <label>Username{""}</label>
-        <input
-          className="authpage"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <label>Password{""}</label>
-        <input
-          className="authpage"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button className="login button">Log In</button>
-      </form>
-      <form onSubmit={handleSubmitTwo}>
-        <button className="signup button">Sign Up</button>
-      </form>
-    </div>
+    <>
+      <button className="browse button" onClick={() => navigate("/home")}>
+        Browse
+      </button>
+      <div className="loginpage">
+        <h1>MoView</h1>
+        {error && <p>{error}</p>}
+        <form onSubmit={handleSubmit}>
+          <label>Username{""}</label>
+          <input
+            className="authpage"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label>Password{""}</label>
+          <input
+            className="authpage"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="login button">Log In</button>
+        </form>
+        <form onSubmit={handleSubmitTwo}>
+          <button className="signup button">Sign Up</button>
+        </form>
+      </div>
+    </>
   );
 }

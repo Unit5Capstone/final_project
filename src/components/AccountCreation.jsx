@@ -9,11 +9,10 @@ export default function AccountCreation({ setToken }) {
   const [fullname, setFullName] = useState("");
   const [profilename, setProfileName] = useState("");
   const [email, setEmail] = useState("");
-  //   const [email, setEmail] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  async function handleSubmit(event) {
+  async function handleSubmitThree(event) {
     event.preventDefault();
     if (fullname.length <= 0 || profilename.length <= 0 || email.length <= 0) {
       alert(
@@ -21,6 +20,7 @@ export default function AccountCreation({ setToken }) {
       );
     } else {
       try {
+        // alert("Thank you for signing up!");
         const response = await fetch(
           "https://fsa-jwt-practice.herokuapp.com/signup",
           {
@@ -49,29 +49,35 @@ export default function AccountCreation({ setToken }) {
   }
 
   return (
-    <div>
+    <>
       <h2>please create an account</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Full Name{""}</label>
-        <input
-          type="fullname"
-          value={fullname}
-          onChange={(e) => setFullName(e.target.value)}
-        />
-        <label>Profile Name{""}</label>
-        <input
-          type="profilename"
-          value={profilename}
-          onChange={(e) => setProfileName(e.target.value)}
-        />
-        <label>Email{""}</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <button className="submit button">Submit</button>
-      </form>
-    </div>
+      <div>
+        {error && <p>{error}</p>}
+        <form onSubmit={() => navigate("/home")}>
+          <label>Full Name{""}</label>
+          <input
+            type="fullname"
+            value={fullname}
+            onChange={(e) => setFullName(e.target.value)}
+          />
+          <label>Profile Name{""}</label>
+          <input
+            type="profilename"
+            value={profilename}
+            onChange={(e) => setProfileName(e.target.value)}
+          />
+          <label>Email{""}</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <button>Submit</button>
+        </form>
+        <button className="browse button" onClick={() => navigate("/home")}>
+          Browse
+        </button>
+      </div>
+    </>
   );
 }
